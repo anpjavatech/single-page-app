@@ -16,7 +16,10 @@
     color: var(--color-primary-400);
   }
   
-  .list a:hover,
+  .list a:hover {
+    color: var(--color-primary-800);
+  }
+  
   .list a.active {
     color: var(--color-primary-800);
     text-decoration: underline;
