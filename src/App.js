@@ -4,6 +4,7 @@ import ProductsPage from "./pages/Products";
 import RootLayout from "./pages/RootLayout";
 import AdminRootLayout from "./pages/AdminRootLayout";
 import ErrorPage from "./pages/Error";
+import ProductDetailPage from "./pages/ProductDetailPage.js";
 
 
 function App() {
@@ -14,8 +15,9 @@ function App() {
       element:<RootLayout/>,
       errorElement: <ErrorPage />,
       children:[
-        {path:"/",element: <HomePage />},
-        {path:"/products",element: <ProductsPage />},
+        {index: true, element: <HomePage />},
+        {path:"/products", element: <ProductsPage />},
+        {path:"/products/:productId", element: <ProductDetailPage />},
       ]
     },
     {
@@ -23,8 +25,8 @@ function App() {
       element:<AdminRootLayout/>,
       errorElement: <ErrorPage />,
       children:[
-        {path:"/admin",element: <HomePage />},
-        {path:"/admin/products",element: <ProductsPage />},
+        {index:true, element: <HomePage />},
+        {path:"/admin/products", element: <ProductsPage />},
       ]
     }
   ]);
